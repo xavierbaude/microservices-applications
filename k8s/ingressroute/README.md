@@ -1,0 +1,1 @@
+Useful if you use traefik as ingress controller
