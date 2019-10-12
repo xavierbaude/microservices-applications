@@ -1,0 +1,29 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: frontend
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`hipster.example.com`)
+    kind: Rule
+    services:
+    - name: frontend
+      port: 80
+  tls:
+    certResolver: sample
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: frontend-insecure
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`hipster.example.com`)
+    kind: Rule
+    services:
+    - name: frontend
+      port: 80
