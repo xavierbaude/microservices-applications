@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`sock-shop.example.com`)
+  - match: Host(`sock-store.example.com`)
     kind: Rule
     services:
     - name: front-end
@@ -22,7 +22,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`sock-shop.example.com`)
+  - match: Host(`sock-store.example.com`)
     kind: Rule
     services:
     - name: front-end
