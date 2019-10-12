@@ -1,0 +1,29 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: productpage
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`book-info.example.com`)
+    kind: Rule
+    services:
+    - name: productpage
+      port: 9080
+  tls:
+    certResolver: sample
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: productpage-insecure
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`book-info.example.com`)
+    kind: Rule
+    services:
+    - name: productpage
+      port: 9080
