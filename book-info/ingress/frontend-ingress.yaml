@@ -1,0 +1,31 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: "ingress-productpage"
+spec:
+  rules:
+  - host: productpage.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: productpage
+          servicePort: 9080
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: "ingress-productpage"
+spec:
+  rules:
+  - host: productpage.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: productpage
+          servicePort: 9080
+  tls:
+  - secretName: productpage-certificate
+    hosts:
+    - productpage.example.com
