@@ -15,7 +15,7 @@ spec:
 kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
-  name: "ingress-productpage"
+  name: "ingress-productpage-tls"
 spec:
   rules:
   - host: productpage.example.com

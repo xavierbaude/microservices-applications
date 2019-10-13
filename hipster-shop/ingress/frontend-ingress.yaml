@@ -15,7 +15,7 @@ spec:
 kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
-  name: "ingress-hipster"
+  name: "ingress-hipster-tls"
 spec:
   rules:
   - host: hipster.example.com
