@@ -11,7 +11,9 @@ spec:
         backend:
           serviceName: front-end
           servicePort: 80
+
 ---
+
 kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
